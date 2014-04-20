@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery.uberSelect</title>
+    <style type="text/css">
+    .uberselect {
+        background: url('uberselect.png');
+        height: 40px;
+        width: 192px;
+    }
+
+    .uberselect > div {
+        color: #fff;
+        line-height: 40px;
+        width: 142px;
+        padding-left: 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+    See the source code
+
+    <form action="">
+        <select id="myselect">
+            <option value="1">Element 1</option>
+            <option value="2">Element 2</option>
+            <option value="3">Element 3</option>
+            <option value="4">Element 4</option>
+            <option value="5">Element 5</option>
+        </select>
+    </form>
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="jquery.uberSelect.js"></script>
+    <script>
+    $(document).on('ready', function (e)
+    {
+        $('#myselect').on('change', function (e)
+        {
+            console.log('change');
+        }).uberSelect();
+    });
+    </script>
+</body>
+</html>
