@@ -26,7 +26,7 @@ This element represent the entire control, usually you add a `background-image`,
 `.uberselect > div`  
 This element is to display the text of the selected option, usually you add here text styles like `font-size`, `font-weight`, etc.
 
-*Open **index.html** file to see an example of CSS!*
+*Open example.html file to see an example of CSS!*
 
 ###3.- Activate uberSelect, just call the method:
 
