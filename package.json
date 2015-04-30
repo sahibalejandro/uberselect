@@ -1,0 +1,29 @@
+{
+  "name": "uberselect",
+  "version": "2.0.0",
+  "description": "jQuery plugin to customize (skin) select elements keeping native functionality.",
+  "main": "uberselect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahibalejandro/uberselect.git"
+  },
+  "keywords": [
+    "jquery",
+    "select",
+    "plugin",
+    "style",
+    "css"
+  ],
+  "author": "Sahib J. Leo <sahib@sahib.io> (http://sahib.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sahibalejandro/uberselect/issues"
+  },
+  "homepage": "https://github.com/sahibalejandro/uberselect",
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}

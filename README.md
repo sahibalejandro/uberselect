@@ -14,7 +14,7 @@ How to use
 ###1.- Include jQuery and jQuery.uberSelect scripts in your page
 
     <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script src="jquery.uberSelect.js"></script>
+    <script src="uberselect.js"></script>
 
 *You can use jQuery since version 1.8*
 
@@ -23,14 +23,22 @@ How to use
 `.uberselect`  
 This element represent the entire control, usually you add a `background-image`, `border`, etc.
 
-`.uberselect > div`  
-This element is to display the text of the selected option, usually you add here text styles like `font-size`, `font-weight`, etc.
-
-*Open example.html file to see an example of CSS!*
+`.uberselect > span`  
+This element is to display the text of the selected option, usually you add here text styles like `font-size`, `font-weight`, `text-overflow` etc.
 
 ###3.- Activate uberSelect, just call the method:
 
     $('#myselect').uberSelect();
+
+Or you may define the class name to use:
+
+    $('#myselect').uberSelect({className: 'custom-uberselect'});
+
+Also, the plugin automatically starts on all select elements with `data-uberselect` attribute.
+
+    <select name="country" data-uberselect="<class-name>">...</select>
+
+Where `<class-name>` is the name of the CSS class you want to use.
 
 That's All.
 
