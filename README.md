@@ -9,16 +9,24 @@ elements, simply you do it in the standar way.
 This plugin is inspired on [SelectSkin](http://carlosroberto.name/jquery-selectskin/), but lighter.
 
 How to use
-----------
+====
 
-###1.- Include jQuery and jQuery.uberSelect scripts in your page
+1.- Include jQuery and jQuery.uberSelect scripts in your page
+----
 
     <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="uberselect.js"></script>
 
-*You can use jQuery since version 1.8*
+Or do it with npm
+----
 
-###2.- You only need two styles rules
+    npm install uberselect --save
+    
+It's browserify compatible!
+
+
+2.- You only need two styles rules
+----
 
 `.uberselect`  
 This element represent the entire control, usually you add a `background-image`, `border`, etc.
@@ -26,7 +34,8 @@ This element represent the entire control, usually you add a `background-image`,
 `.uberselect > span`  
 This element is to display the text of the selected option, usually you add here text styles like `font-size`, `font-weight`, `text-overflow` etc.
 
-###3.- Activate uberSelect, just call the method:
+3.- Activate uberSelect, just call the method:
+----
 
     $('#myselect').uberSelect();
 
