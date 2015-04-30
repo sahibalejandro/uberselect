@@ -1,6 +1,6 @@
 {
   "name": "uberselect",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "jQuery plugin to customize (skin) select elements keeping native functionality.",
   "main": "uberselect.js",
   "scripts": {
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/sahibalejandro/uberselect",
   "dependencies": {
-    "jquery": "^2.1.4"
+    "jquery": "^2.1"
   }
 }
