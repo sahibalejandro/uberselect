@@ -66,6 +66,8 @@ text styles like `font-size`, `font-weight`, `text-overflow` etc.
 *Pro Tip: Use `overflow: hidden; white-space: nowrap; text-overflow: ellipsis;` to avoid
 the text overflow when an option with a large text is selected.*
 
+Example: [http://codepen.io/sahibalejandro/pen/GJJgEp](http://codepen.io/sahibalejandro/pen/GJJgEp)
+
 That's All.
 
 Feel free to use issues system to report bugs or something.
