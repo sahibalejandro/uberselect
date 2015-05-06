@@ -30,6 +30,12 @@ var uberSelect = function ($) {
 
     var methods = {
 
+        /**
+         * Initialize uberSelect on the specified elements.
+         *
+         * @param {Object} options
+         * @returns {jQuery}
+         */
         init: function (options) {
             options = $.extend({}, defaults, options);
 
@@ -69,32 +75,36 @@ var uberSelect = function ($) {
                     $(this).data('uberselect').box.removeClass('focus');
                 })
 
-                // Prepend the placeholder option
-                var placeholder = $select.attr('placeholder');
-                if (placeholder) {
-                    var $placeholderOption = $('<option>').val('').text(placeholder);
-                    $select.prepend($placeholderOption);
-                    $placeholderOption.attr('disabled', 'disabled');
-                }
-
-                // Select the placeholder option if no option is already selected
-                var $default = $select.find('option[selected]');
-                if (!$default.length && placeholder) {
-                    $placeholderOption.attr('selected', 'selected');
-                }
+                add_placeholder($select);
 
                 $select.uberSelect('update');
             });
         },
 
+        /**
+         * Updates the label using the text from the selected option, if no option is selected
+         * the placeholder is used if it's available.
+         *
+         * @returns {jQuery}
+         */
         update: function () {
             return this.each(function () {
                 var $select = $(this);
                 var data = $select.data('uberselect');
                 var option = this.options.item(this.selectedIndex);
 
+                // Try to append a placeholder when no options are available on the select box.
+                // If also no placeholder is provided then just set the label text to an empty
+                // string.
                 if (!option) {
-                    return;
+                    var $placeholderOption = add_placeholder($select);
+
+                    if ($placeholderOption) {
+                        option = $placeholderOption[0];
+                    } else {
+                        data.label.text('');
+                        return;
+                    }
                 }
 
                 // Update label text.
@@ -108,6 +118,32 @@ var uberSelect = function ($) {
                 }
             });
         }
+    };
+
+    /**
+     * Add the placeholder option on the specified select box.
+     *
+     * @param jQuery $select
+     * @returns {jQuery|null}
+     */
+    function add_placeholder($select)
+    {
+        var placeholder = $select.attr('placeholder');
+        var $placeholderOption = null;
+        var $default = $select.find('option[selected]');
+
+        if (placeholder) {
+            $placeholderOption = $('<option>').val('').text(placeholder);
+            $select.prepend($placeholderOption);
+            $placeholderOption.attr('disabled', 'disabled');
+        }
+
+        // Select the placeholder option if no option is already selected
+        if ($default.length == 0 && placeholder) {
+            $placeholderOption.attr('selected', 'selected');
+        }
+
+        return $placeholderOption;
     };
 
     $.fn.uberSelect = function (method) {
