@@ -6,6 +6,8 @@ Customize only your select inputs and keep the native user interface for options
 You don't need extra stuff to add events or add/remove options in your select
 elements, simply you do it in the standar way.
 
+Tested on: IE9+, FireFox, Chrome, Safari and Chrome for Android. I think it should work on other *not too old* browsers.
+
 How to use
 ====
 

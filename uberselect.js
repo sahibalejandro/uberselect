@@ -97,11 +97,9 @@ var uberSelect = function ($) {
                 // If also no placeholder is provided then just set the label text to an empty
                 // string.
                 if (!option) {
-                    var $placeholderOption = add_placeholder($select);
+                    option = add_placeholder($select);
 
-                    if ($placeholderOption) {
-                        option = $placeholderOption[0];
-                    } else {
+                    if (!option) {
                         data.label.text('');
                         return;
                     }
@@ -128,22 +126,23 @@ var uberSelect = function ($) {
      */
     function add_placeholder($select)
     {
+        var option = null;
         var placeholder = $select.attr('placeholder');
-        var $placeholderOption = null;
         var $default = $select.find('option[selected]');
 
         if (placeholder) {
-            $placeholderOption = $('<option>').val('').text(placeholder);
-            $select.prepend($placeholderOption);
-            $placeholderOption.attr('disabled', 'disabled');
+            option = new Option(placeholder, '');
+            option.disabled = true;
+
+            $select.prepend(option);
         }
 
         // Select the placeholder option if no option is already selected
         if ($default.length == 0 && placeholder) {
-            $placeholderOption.attr('selected', 'selected');
+            $select[0].value = '';
         }
 
-        return $placeholderOption;
+        return option;
     };
 
     $.fn.uberSelect = function (method) {
