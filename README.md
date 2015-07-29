@@ -14,34 +14,46 @@ How to use
 1.- Include jQuery and uberSelect scripts in your page
 ----
 
-    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script src="uberselect.js"></script>
+```html
+<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="uberselect.js"></script>
+```
 
 Or do it with npm
 ----
 
-    npm install uberselect --save
-    
+```
+npm install uberselect --save
+```
+
 It's browserify compatible!
 
 2.- To activate uberSelect, just call the method:
 ----
 
-    $('#myselect').uberSelect();
+```javascript
+$('#myselect').uberSelect();
+```
 
 Or you may define the class name to use:
 
-    $('#myselect').uberSelect({className: 'custom-uberselect'});
+```javascript
+$('#myselect').uberSelect({className: 'custom-uberselect'});
+```
 
 Also, the plugin automatically starts on all select elements with `data-uberselect` attribute.
 
-    <select name="country" data-uberselect="<class-name>">...</select>
+```html
+<select name="country" data-uberselect="<class-name>">...</select>
+```
 
 Where `<class-name>` is the name of the CSS class you want to use.
 
 You can also add a `placeholder` attribute and uberSelect will put a placeholder option automagically for you.
 
-    <select name="country" data-uberselect="<class-name>" placeholder="Select a country">...</select>
+```html
+<select name="country" data-uberselect="<class-name>" placeholder="Select a country">...</select>
+```
 
 Note: Options with value `""` (empty string) will be trated as placeholder, so make sure this behavior don't make conflicts with
 your current "options logic".
